@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seqnce Ops: Simpler processes. Less busywork. More done.</title>
 <meta name="description" content="Seqnce Ops learns how your business works, simplifies the process, and builds a workflow with the automations, interfaces, and AI that fit, so your business runs leaner and more profitably.">
+<meta name="theme-color" content="#3A1F3D">
+<meta property="og:title" content="Seqnce Ops — Simpler processes. Less busywork. More done.">
+<meta property="og:description" content="We learn how your team works, simplify the process, and build the workflow, automations, and AI that fit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seqnceops.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233A1F3D'/><text x='16' y='23' font-size='20' font-weight='bold' fill='%23E8B4C0' font-family='Arial,sans-serif' text-anchor='middle'>S</text></svg>">
 <style>
   :root{
     --ink:#3A1F3D; --ink-2:#2A1630; --plum:#7A2E6B; --plum-deep:#5A2150;
@@ -35,13 +41,34 @@
   .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;color:var(--grey);font-weight:500}
   .nav-links a:hover{color:var(--ink)}
   .nav .btn{padding:10px 20px}
-  @media(max-width:760px){.nav-links a:not(.btn){display:none}}
+  .nav-toggle{display:none;background:none;border:none;padding:6px;cursor:pointer;line-height:0}
+  .nav-toggle svg{width:26px;height:26px;stroke:var(--ink)}
+  @media(max-width:760px){
+    .nav-toggle{display:block}
+    .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:6px 24px 18px;display:none;box-shadow:0 14px 26px rgba(58,31,61,.08)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;color:var(--text)}
+    .nav-links .btn{margin-top:10px;text-align:center;color:#fff}
+  }
 
-  .hero{background:radial-gradient(1100px 480px at 82% -12%,#f6e2ea 0,transparent 62%),var(--paper);padding:96px 0 72px}
-  .hero h1{font-size:56px;max-width:840px}
-  .hero .lead{font-size:21px;margin:22px 0 32px;max-width:640px}
+  .hero{background:radial-gradient(1100px 480px at 82% -12%,#f6e2ea 0,transparent 62%),var(--paper);padding:96px 0 80px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-size:50px;max-width:560px}
+  .hero .lead{font-size:20px;margin:22px 0 32px;max-width:560px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-art{display:none}}
   @media(max-width:760px){.hero h1{font-size:38px}}
+
+  .hero-art{position:relative}
+  .hero-panel{background:linear-gradient(160deg,#ffffff,#fbeef2);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 30px 70px rgba(58,31,61,.13)}
+  .hp-flow{display:flex;flex-direction:column;gap:14px}
+  .hp-step{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 6px 16px rgba(58,31,61,.05)}
+  .hp-num{flex:none;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--blush);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .hp-lines{flex:1;display:flex;flex-direction:column;gap:8px}
+  .hp-lines span{height:8px;border-radius:6px;background:var(--paper-alt);display:block}
+  .hp-lines span:first-child{width:72%;background:var(--blush-soft)}
+  .hp-lines span:last-child{width:46%}
+  .hp-cap{margin-top:18px;text-align:center;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--plum-deep);text-transform:uppercase}
 
   .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-alt)}
   .trust p{text-align:center;color:var(--grey);font-size:13px;font-weight:600;letter-spacing:.04em}
@@ -96,8 +123,6 @@
   @media(max-width:960px){.price-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:520px){.price-grid{grid-template-columns:1fr}}
   .plan{border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;position:relative}
-  .plan.feat{border:2px solid var(--plum);box-shadow:0 18px 40px rgba(122,46,107,.16)}
-  .plan .tag{position:absolute;top:-12px;left:24px;background:var(--plum);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
   .plan h3{font-size:19px;margin-bottom:4px}
   .plan .sub{font-size:14px;color:var(--grey);min-height:60px;margin-bottom:16px}
   .plan ul{list-style:none;margin-top:6px}
@@ -135,24 +160,39 @@
 <header>
   <div class="wrap nav">
     <div class="logo"><span class="mark">S</span> Seqnce Ops</div>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#problem">Why</a>
       <a href="#method">How we work</a>
       <a href="#pricing">Packages</a>
       <a href="#book" class="btn">Get in touch</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Process design · workflow automation · AI</span>
-    <h1>We simplify and automate how your business works.</h1>
-    <p class="lead">We learn how your team actually works, simplify the process, and build a workflow around it, with the automations, interfaces, and AI that fit. We handle the training and can stay on to run it, so you get the system without hiring for it.</p>
-    <div class="hero-cta">
-      <a href="#book" class="btn">Get in touch</a>
-      <a href="#method" class="btn ghost">See how we work</a>
+    <div class="hero-text">
+      <span class="eyebrow">Process design · workflow automation · AI</span>
+      <h1>We simplify and automate how your business works.</h1>
+      <p class="lead">We learn how your team actually works, simplify the process, and build a workflow around it, with the automations, interfaces, and AI that fit. We handle the training and can stay on to run it, so you get the system without hiring for it.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn">Get in touch</a>
+        <a href="#method" class="btn ghost">See how we work</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-panel">
+        <div class="hp-flow">
+          <div class="hp-step"><span class="hp-num">1</span><div class="hp-lines"><span></span><span></span></div></div>
+          <div class="hp-step"><span class="hp-num">2</span><div class="hp-lines"><span></span><span></span></div></div>
+          <div class="hp-step"><span class="hp-num">3</span><div class="hp-lines"><span></span><span></span></div></div>
+        </div>
+        <div class="hp-cap">One workflow, running itself</div>
+      </div>
     </div>
   </div>
 </section>
@@ -266,7 +306,7 @@
         <p class="sub">We assess where you're ready for AI and automation, find the highest-value opportunities, and give you a clear plan.</p>
         <ul><li>Readiness assessment</li><li>Automation roadmap</li><li>Change plan</li><li>Data &amp; compliance review</li></ul>
       </div>
-      <div class="plan feat">
+      <div class="plan">
         <h3>Workflow Design &amp; Build</h3>
         <p class="sub">We design an AI-powered workflow around how you work, then build it into the right tools with access to your data.</p>
         <ul><li>Workflow design that fits</li><li>AI-powered automations</li><li>Built into your tools</li><li>You keep your data</li></ul>
@@ -336,6 +376,12 @@
     var body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Company: ' + company + '\n\n' + message;
     window.location.href = 'mailto:info@seqnceops.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(navToggle){
+    navToggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ navLinks.classList.remove('open'); }); });
+  }
 </script>
 
 </body>
