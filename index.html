@@ -64,10 +64,9 @@
   .hp-flow{display:flex;flex-direction:column;gap:14px}
   .hp-step{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 6px 16px rgba(58,31,61,.05)}
   .hp-num{flex:none;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--blush);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
-  .hp-lines{flex:1;display:flex;flex-direction:column;gap:8px}
-  .hp-lines span{height:8px;border-radius:6px;background:var(--paper-alt);display:block}
-  .hp-lines span:first-child{width:72%;background:var(--blush-soft)}
-  .hp-lines span:last-child{width:46%}
+  .hp-txt{display:flex;flex-direction:column;line-height:1.35}
+  .hp-txt b{font-size:15px;color:var(--ink);font-weight:700}
+  .hp-txt span{font-size:13px;color:var(--grey)}
   .hp-cap{margin-top:18px;text-align:center;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--plum-deep);text-transform:uppercase}
 
   .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-alt)}
@@ -187,9 +186,9 @@
     <div class="hero-art" aria-hidden="true">
       <div class="hero-panel">
         <div class="hp-flow">
-          <div class="hp-step"><span class="hp-num">1</span><div class="hp-lines"><span></span><span></span></div></div>
-          <div class="hp-step"><span class="hp-num">2</span><div class="hp-lines"><span></span><span></span></div></div>
-          <div class="hp-step"><span class="hp-num">3</span><div class="hp-lines"><span></span><span></span></div></div>
+          <div class="hp-step"><span class="hp-num">1</span><div class="hp-txt"><b>Map the process</b><span>See how the work really flows</span></div></div>
+          <div class="hp-step"><span class="hp-num">2</span><div class="hp-txt"><b>Build &amp; automate</b><span>The manual steps run themselves</span></div></div>
+          <div class="hp-step"><span class="hp-num">3</span><div class="hp-txt"><b>Your team runs it</b><span>Documented, trained, and owned</span></div></div>
         </div>
         <div class="hp-cap">One workflow, running itself</div>
       </div>
