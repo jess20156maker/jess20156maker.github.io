@@ -42,7 +42,6 @@
   .hero .lead{font-size:21px;margin:22px 0 32px;max-width:640px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .hero-note{margin-top:18px;font-size:14px;color:var(--grey)}
-  .strike{color:var(--grey);text-decoration:line-through;text-decoration-color:#d8bcc6}
   @media(max-width:760px){.hero h1{font-size:38px}}
 
   .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-alt)}
@@ -101,22 +100,10 @@
   .plan.feat{border:2px solid var(--plum);box-shadow:0 18px 40px rgba(122,46,107,.16)}
   .plan .tag{position:absolute;top:-12px;left:24px;background:var(--plum);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
   .plan h3{font-size:19px;margin-bottom:4px}
-  .plan .sub{font-size:14px;color:var(--grey);min-height:60px}
-  .plan .time{font-size:13px;color:var(--plum-deep);font-weight:700;margin:2px 0 16px}
+  .plan .sub{font-size:14px;color:var(--grey);min-height:60px;margin-bottom:16px}
   .plan ul{list-style:none;margin-top:6px}
   .plan li{font-size:14px;color:var(--text);padding:7px 0 7px 24px;position:relative}
   .plan li::before{content:"";position:absolute;left:0;top:12px;width:14px;height:9px;border-left:2px solid var(--plum);border-bottom:2px solid var(--plum);transform:rotate(-45deg)}
-
-  .retainer{margin-top:26px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:30px}
-  .retainer h3{font-size:20px;margin-bottom:4px}
-  .retainer .rlead{color:var(--grey);font-size:15px;margin-bottom:22px;max-width:660px}
-  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:760px){.tiers{grid-template-columns:1fr}}
-  .tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
-  .tier .tn{font-weight:700;color:var(--ink);font-size:16px;margin-bottom:6px}
-  .tier .th{font-size:14px;color:var(--grey)}
-  .addon{margin-top:18px;font-size:14px;color:var(--text);background:#fff;border:1px dashed var(--plum);border-radius:12px;padding:14px 18px}
-  .addon b{color:var(--plum-deep)}
 
   .split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
   @media(max-width:860px){.split{grid-template-columns:1fr}}
@@ -160,7 +147,7 @@
       <a href="mailto:hello@seqnceops.com?subject=Seqnce%20Ops%20enquiry" class="btn">Email us</a>
       <a href="#method" class="btn ghost">See how we work</a>
     </div>
-    <p class="hero-note"><span class="strike">Manual steps, endless copy-paste, knowledge stuck in people's heads</span> &nbsp;→&nbsp; one system your whole team can trust.</p>
+    <p class="hero-note">Manual steps, endless copy-paste, knowledge stuck in people's heads &nbsp;→&nbsp; one system your whole team can trust.</p>
   </div>
 </section>
 
@@ -219,28 +206,13 @@
   </div>
 </section>
 
-<!-- CHANGE MANAGEMENT -->
-<section id="change">
-  <div class="wrap">
-    <span class="eyebrow">Change management</span>
-    <h2>The hard part isn't the build. It's getting people to use it.</h2>
-    <p class="lead">A new way of working only pays off if the team actually adopts it, and that is where most projects quietly fail. So we treat change as its own piece of work, with a real plan behind it, not an afterthought once the system goes live.</p>
-    <div class="grid cards-4" style="margin-top:40px">
-      <div class="card"><h3>A real change plan</h3><p>We map who is affected, what changes for them, and how we bring them along, well before anything rolls out.</p></div>
-      <div class="card"><h3>Proven methodologies</h3><p>We lean on established frameworks like Prosci ADKAR and Kotter's 8 steps, not guesswork.</p></div>
-      <div class="card"><h3>Buy-in and champions</h3><p>We get leaders and everyday users on side early, with internal champions to carry it forward.</p></div>
-      <div class="card"><h3>Adoption you can see</h3><p>We track whether people are really using it and keep adjusting until the new way sticks.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- HOW IT WORKS -->
 <section id="how" class="alt">
   <div class="wrap">
     <div class="center" style="max-width:700px">
-      <span class="eyebrow">The engagement</span>
+      <span class="eyebrow">The project</span>
       <h2>From discovery to a workflow you own</h2>
-      <p class="lead">Every engagement starts by learning your business and ends with a workflow your team runs. You always know what's happening and what's next.</p>
+      <p class="lead">Every project starts by learning your business and ends with a workflow your team runs. You always know what's happening and what's next.</p>
     </div>
     <div class="steps">
       <div class="step"><div class="num">1</div><h3>Discover &amp; map</h3><p>Discovery calls to learn your business, then map how the work really flows and where it breaks.</p></div>
@@ -258,7 +230,7 @@
     <div>
       <span class="eyebrow">What we build</span>
       <h2>Automations, interfaces, and AI, whatever the job needs</h2>
-      <p class="lead" style="margin-bottom:20px">It's not just about AI. We build the mix that actually fits your business, and we'll recommend the best tools and models for the work rather than forcing everything through one.</p>
+      <p class="lead" style="margin-bottom:20px">AI shouldn't be used just because it's AI. We bring it in only where it genuinely makes sense for the work, and build the mix of tools and models that actually fits your business rather than forcing everything through one.</p>
       <ul class="checklist">
         <li><b>Custom automations</b> that kill the manual, repetitive steps.</li>
         <li><b>Interfaces and apps</b> your team actually wants to use.</li>
@@ -268,7 +240,7 @@
       </ul>
     </div>
     <div class="quote">
-      <p>"New tools on a broken process just give you a faster mess. We simplify how the work flows, build the system underneath it, and teach your team to run it."</p>
+      <p>New tools on a broken process just give you a faster mess. We simplify how the work flows, build the system underneath it, and teach your team to run it.</p>
       <div class="who">The Seqnce Ops approach</div>
     </div>
   </div>
@@ -280,32 +252,27 @@
     <div class="center" style="max-width:680px">
       <span class="eyebrow">Packages</span>
       <h2>Ways we can help</h2>
-      <p class="lead">Every engagement is scoped to your business and quoted as a clear proposal. Most clients start with strategy, then move through design, build, and rollout.</p>
+      <p class="lead">Every project is scoped to your business and quoted as a clear proposal. Most clients start with strategy, then move through design, build, and rollout.</p>
     </div>
     <div class="price-grid">
       <div class="plan">
         <h3>AI Strategy &amp; Roadmap</h3>
         <p class="sub">We assess where you're ready for AI and automation, find the highest-value opportunities, and give you a clear plan.</p>
-        <div class="time">1 to 2 weeks</div>
         <ul><li>Readiness assessment</li><li>Automation roadmap</li><li>Change plan</li><li>Data &amp; compliance review</li></ul>
       </div>
       <div class="plan feat">
-        <span class="tag">Most popular</span>
         <h3>Workflow Design &amp; Build</h3>
         <p class="sub">We design an AI-powered workflow around how you work, then build it into the right tools with access to your data.</p>
-        <div class="time">3 to 8 weeks</div>
         <ul><li>Workflow design that fits</li><li>AI-powered automations</li><li>Built into your tools</li><li>You keep your data</li></ul>
       </div>
       <div class="plan">
         <h3>Implementation &amp; Support</h3>
         <p class="sub">We roll it out, bring your team along, and document everything so the new way of working actually sticks.</p>
-        <div class="time">With every build</div>
         <ul><li>Rollout support</li><li>Training &amp; change management</li><li>Loom walkthrough + one-pager</li><li>Post-launch fixes</li></ul>
       </div>
       <div class="plan">
         <h3>Ongoing Ops Partner</h3>
         <p class="sub">An embedded partner that maintains and grows your system, flexing up or down as you need.</p>
-        <div class="time">Monthly</div>
         <ul><li>Priority support</li><li>Ongoing iteration</li><li>Roadmap add-ons</li><li>Team enablement</li></ul>
       </div>
     </div>
@@ -315,17 +282,6 @@
       <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-weight:700;color:var(--plum-deep);font-size:15px">
         <span>Simple workflow</span><span style="color:var(--blush)">&#8594;</span><span>Connected automation</span><span style="color:var(--blush)">&#8594;</span><span style="background:var(--plum);color:#fff;padding:5px 14px;border-radius:999px">Fully custom</span>
       </div>
-    </div>
-
-    <div class="retainer">
-      <h3>Ongoing Ops Partner</h3>
-      <p class="rlead">The system is never "done." We embed into your company and maintain the base for you, so you get the value of an in-house ops person without the cost of hiring one. It's a flexible model: ramp up when you're expanding and building new things, ramp down to light-touch once it's humming.</p>
-      <div class="tiers">
-        <div class="tier"><div class="tn">Support</div><div class="th">Light-touch upkeep, fixes, and small improvements to keep things running.</div></div>
-        <div class="tier"><div class="tn">Growth</div><div class="th">Active iteration and new automations each month as the business changes.</div></div>
-        <div class="tier"><div class="tn">Partner</div><div class="th">Embedded ops partner, driving your roadmap as if we were in-house.</div></div>
-      </div>
-      <div class="addon"><b>Flexible and roadmap add-ons:</b> scale hours up or down as your needs change, or add a block of hours anytime to build a specific feature, drawn down against your roadmap.</div>
     </div>
 
     <div style="margin-top:26px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:34px 30px">
