@@ -18,7 +18,7 @@
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .btn{display:inline-block;background:var(--plum);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 22px rgba(122,46,107,.30)}
+  .btn{display:inline-block;background:var(--plum);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 22px rgba(122,46,107,.30);cursor:pointer;border:none;font-family:inherit;font-size:15px}
   .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(122,46,107,.40)}
   .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);font-weight:600}
   .btn.ghost:hover{border-color:var(--plum);color:var(--plum)}
@@ -117,7 +117,15 @@
   .cta{background:var(--ink);color:#fff;border-radius:24px;padding:56px 40px;text-align:center}
   .cta h2{color:#fff;font-size:36px}
   .cta p{color:#d0c2cd;max-width:560px;margin:12px auto 26px;font-size:18px}
-  .cta .btn{background:var(--blush);color:var(--ink-2)}
+
+  .contact-form{max-width:540px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:12px}
+  .cf-row{display:flex;gap:12px;flex-wrap:wrap}
+  .cf-row input{flex:1;min-width:180px}
+  .contact-form input,.contact-form textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#b9a9b6}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blush);background:rgba(255,255,255,.10)}
+  .contact-form textarea{resize:vertical}
+  .contact-form .btn{background:var(--blush);color:var(--ink-2);align-self:center;margin-top:6px}
 
   footer{padding:44px 0;border-top:1px solid var(--line);color:var(--grey);font-size:14px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
@@ -132,7 +140,7 @@
       <a href="#problem">Why</a>
       <a href="#method">How we work</a>
       <a href="#pricing">Packages</a>
-      <a href="mailto:info@seqnceops.com?subject=Seqnce%20Ops%20enquiry" class="btn">Email us</a>
+      <a href="#book" class="btn">Get in touch</a>
     </nav>
   </div>
 </header>
@@ -144,7 +152,7 @@
     <h1>We simplify and automate how your business works.</h1>
     <p class="lead">We learn how your team actually works, simplify the process, and build a workflow around it, with the automations, interfaces, and AI that fit. We handle the training and can stay on to run it, so you get the system without hiring for it.</p>
     <div class="hero-cta">
-      <a href="mailto:info@seqnceops.com?subject=Seqnce%20Ops%20enquiry" class="btn">Email us</a>
+      <a href="#book" class="btn">Get in touch</a>
       <a href="#method" class="btn ghost">See how we work</a>
     </div>
     <p class="hero-note">Manual steps, endless copy-paste, knowledge stuck in people's heads &nbsp;→&nbsp; one system your whole team can trust.</p>
@@ -287,7 +295,7 @@
     <div style="margin-top:26px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:34px 30px">
       <h3 style="font-size:22px;margin-bottom:8px">Pricing is scoped to you</h3>
       <p style="color:var(--grey);max-width:540px;margin:0 auto 20px;font-size:16px">Cost depends on the size and complexity of your operation, from a single audit to an enterprise rollout. Tell us what you're working with and we'll send pricing and a proposal.</p>
-      <a href="mailto:info@seqnceops.com?subject=Pricing%20enquiry" class="btn">Email for pricing</a>
+      <a href="#book" class="btn">Get pricing</a>
     </div>
   </div>
 </section>
@@ -306,13 +314,21 @@
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA / CONTACT FORM -->
 <section id="book">
   <div class="wrap">
     <div class="cta">
       <h2>Ready to fix how your business runs?</h2>
-      <p>Send us a note about how your team works today, and we'll show you what a simpler, automated way of working could do instead. No pitch, no pressure.</p>
-      <a href="mailto:info@seqnceops.com?subject=Seqnce%20Ops%20enquiry" class="btn">Email us</a>
+      <p>Tell us a bit about how your team works today, and we'll show you what a simpler, automated way of working could do instead. No pitch, no pressure.</p>
+      <form class="contact-form" id="contactForm">
+        <div class="cf-row">
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          <input type="email" id="cf-email" name="email" placeholder="Email address" required>
+        </div>
+        <input type="text" id="cf-company" name="company" placeholder="Company (optional)">
+        <textarea id="cf-message" name="message" rows="4" placeholder="What does your team work on, and where does it get stuck?" required></textarea>
+        <button type="submit" class="btn">Send enquiry</button>
+      </form>
     </div>
   </div>
 </section>
@@ -324,6 +340,19 @@
     <div>© 2026 Seqnce Ops</div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var company = document.getElementById('cf-company').value;
+    var message = document.getElementById('cf-message').value;
+    var subject = 'Seqnce Ops enquiry from ' + name;
+    var body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Company: ' + company + '\n\n' + message;
+    window.location.href = 'mailto:info@seqnceops.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+</script>
 
 </body>
 </html>
