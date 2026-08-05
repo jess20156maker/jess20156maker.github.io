@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seqnce Ops: Simpler processes. Less busywork. More done.</title>
+<meta name="description" content="Seqnce Ops learns how your business works, simplifies the process, and builds a workflow with the automations, interfaces, and AI that fit, so your business runs leaner and more profitably.">
+<meta name="theme-color" content="#3A1F3D">
+<meta property="og:title" content="Seqnce Ops — Simpler processes. Less busywork. More done.">
+<meta property="og:description" content="We learn how your team works, simplify the process, and build the workflow, automations, and AI that fit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seqnceops.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233A1F3D'/><text x='16' y='23' font-size='20' font-weight='bold' fill='%23E8B4C0' font-family='Arial,sans-serif' text-anchor='middle'>S</text></svg>">
+<style>
+  :root{
+    --ink:#3A1F3D; --ink-2:#2A1630; --plum:#7A2E6B; --plum-deep:#5A2150;
+    --blush:#E8B4C0; --blush-soft:#F7E4E9; --cream:#EFDDE3;
+    --paper:#FAF6F5; --paper-alt:#F3EBEE;
+    --text:#2E2630; --grey:#6A5E68; --line:#E8DBDF;
+    --radius:16px; --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--plum);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 22px rgba(122,46,107,.30);cursor:pointer;border:none;font-family:inherit;font-size:15px}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(122,46,107,.40)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);font-weight:600}
+  .btn.ghost:hover{border-color:var(--plum);color:var(--plum)}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--plum-deep)}
+  section{padding:88px 0}
+  h1,h2,h3{color:var(--ink);line-height:1.15;letter-spacing:-0.02em}
+  h2{font-size:34px;margin-bottom:14px}
+  .lead{font-size:19px;color:var(--grey);max-width:680px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(250,246,245,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-0.01em}
+  .logo .mark{width:30px;height:30px;border-radius:8px;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--blush);font-weight:800;font-size:15px}
+  .nav-links{display:flex;gap:30px;align-items:center;font-size:15px;color:var(--grey);font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  .nav .btn{padding:10px 20px}
+  .nav-toggle{display:none;background:none;border:none;padding:6px;cursor:pointer;line-height:0}
+  .nav-toggle svg{width:26px;height:26px;stroke:var(--ink)}
+  @media(max-width:760px){
+    .nav-toggle{display:block}
+    .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:6px 24px 18px;display:none;box-shadow:0 14px 26px rgba(58,31,61,.08)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;color:var(--text)}
+    .nav-links .btn{margin-top:10px;text-align:center;color:#fff}
+  }
+
+  .hero{background:radial-gradient(1100px 480px at 82% -12%,#f6e2ea 0,transparent 62%),var(--paper);padding:96px 0 80px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-size:50px;max-width:560px}
+  .hero .lead{font-size:20px;margin:22px 0 32px;max-width:560px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-art{display:none}}
+  @media(max-width:760px){.hero h1{font-size:38px}}
+
+  .hero-art{position:relative}
+  .hero-panel{background:linear-gradient(160deg,#ffffff,#fbeef2);border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 30px 70px rgba(58,31,61,.13)}
+  .hp-flow{display:flex;flex-direction:column;gap:14px}
+  .hp-step{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 6px 16px rgba(58,31,61,.05)}
+  .hp-num{flex:none;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--blush);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .hp-txt{display:flex;flex-direction:column;line-height:1.35}
+  .hp-txt b{font-size:15px;color:var(--ink);font-weight:700}
+  .hp-txt span{font-size:13px;color:var(--grey)}
+  .hp-cap{margin-top:18px;text-align:center;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--plum-deep);text-transform:uppercase}
+
+  .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-alt)}
+  .trust p{text-align:center;color:var(--grey);font-size:13px;font-weight:600;letter-spacing:.04em}
+  .trust .row{display:flex;gap:34px;justify-content:center;flex-wrap:wrap;margin-top:14px;color:#b99caa;font-weight:700;font-size:17px}
+
+  .grid{display:grid;gap:22px}
+  .cards-3{grid-template-columns:repeat(3,1fr)}
+  .cards-4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.cards-3,.cards-4{grid-template-columns:1fr}}
+  @media(max-width:860px) and (min-width:521px){.cards-4{grid-template-columns:1fr 1fr}}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:box-shadow .2s ease,transform .2s ease}
+  .card:hover{box-shadow:0 14px 34px rgba(58,31,61,.10);transform:translateY(-3px)}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--grey);font-size:15px}
+  .ic{width:44px;height:44px;border-radius:11px;background:var(--blush-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .ic svg{width:22px;height:22px;stroke:var(--plum)}
+
+  .painlist{margin-top:36px;border-top:1px solid var(--line)}
+  .pain{display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+  .pain .pn{flex:none;min-width:46px;font-size:26px;font-weight:800;color:var(--plum);line-height:1}
+  .pain h3{font-size:18px;margin-bottom:3px;color:var(--ink)}
+  .pain p{font-size:15px;color:var(--grey);max-width:660px}
+
+  .alt{background:var(--paper-alt)}
+  .center{text-align:center;margin:0 auto}
+  .center .lead{margin:12px auto 0}
+
+  .method{background:var(--ink)}
+  .method h2,.method h3{color:#fff}
+  .method .eyebrow{color:var(--blush)}
+  .method .lead{color:#d6c6d2}
+  .mcards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  @media(max-width:860px){.mcards{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.mcards{grid-template-columns:1fr}}
+  .mcard{background:#4A2D4D;border:1px solid #5B3A5E;border-radius:var(--radius);padding:24px}
+  .mcard .mic{width:42px;height:42px;border-radius:11px;background:rgba(232,180,192,.18);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .mcard .mic svg{width:22px;height:22px;stroke:var(--blush)}
+  .mcard h3{font-size:17px;margin-bottom:6px}
+  .mcard p{font-size:14px;color:#cbbcc7}
+  .method .kicker{margin-top:36px;font-size:17px;color:#eaddea;max-width:740px}
+  .method .kicker b{color:var(--blush)}
+
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+  @media(max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{position:relative;padding:24px 20px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+  .step .num{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--blush);font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .step h3{font-size:16px;margin-bottom:6px}
+  .step p{font-size:14px;color:var(--grey)}
+
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:24px}
+  @media(max-width:960px){.price-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.price-grid{grid-template-columns:1fr}}
+  .plan{border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;position:relative}
+  .plan h3{font-size:19px;margin-bottom:4px}
+  .plan .sub{font-size:14px;color:var(--grey);min-height:60px;margin-bottom:16px}
+  .plan ul{list-style:none;margin-top:6px}
+  .plan li{font-size:14px;color:var(--text);padding:7px 0 7px 24px;position:relative}
+  .plan li::before{content:"";position:absolute;left:0;top:12px;width:14px;height:9px;border-left:2px solid var(--plum);border-bottom:2px solid var(--plum);transform:rotate(-45deg)}
+
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+  .checklist{list-style:none}
+  .checklist li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .checklist li b{color:var(--ink)}
+  .quote{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:36px}
+  .quote p{font-size:20px;line-height:1.5;color:var(--ink)}
+  .quote .who{margin-top:18px;font-size:14px;color:var(--plum-deep);font-weight:600}
+
+  .cta{background:var(--ink);color:#fff;border-radius:24px;padding:56px 40px;text-align:center}
+  .cta h2{color:#fff;font-size:36px}
+  .cta p{color:#d0c2cd;max-width:560px;margin:12px auto 26px;font-size:18px}
+
+  .contact-form{max-width:540px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:12px}
+  .cf-row{display:flex;gap:12px;flex-wrap:wrap}
+  .cf-row input{flex:1;min-width:180px}
+  .contact-form input,.contact-form textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-size:15px;font-family:inherit}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#b9a9b6}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blush);background:rgba(255,255,255,.10)}
+  .contact-form textarea{resize:vertical}
+  .contact-form .btn{background:var(--blush);color:var(--ink-2);align-self:center;margin-top:6px}
+
+  footer{padding:44px 0;border-top:1px solid var(--line);color:var(--grey);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="mark">S</span> Seqnce Ops</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#problem">Why</a>
+      <a href="#method">How we work</a>
+      <a href="#pricing">Packages</a>
+      <a href="#book" class="btn">Get in touch</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Process design · workflow automation · AI</span>
+      <h1>We simplify and automate how your business works.</h1>
+      <p class="lead">We learn how your team actually works, simplify the process, and build a workflow around it, with the automations, interfaces, and AI that fit. We handle the training and can stay on to run it, so you get the system without hiring for it.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn">Get in touch</a>
+        <a href="#method" class="btn ghost">See how we work</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-panel">
+        <div class="hp-flow">
+          <div class="hp-step"><span class="hp-num">1</span><div class="hp-txt"><b>Map the process</b><span>See how the work really flows</span></div></div>
+          <div class="hp-step"><span class="hp-num">2</span><div class="hp-txt"><b>Build &amp; automate</b><span>The manual steps run themselves</span></div></div>
+          <div class="hp-step"><span class="hp-num">3</span><div class="hp-txt"><b>Your team runs it</b><span>Documented, trained, and owned</span></div></div>
+        </div>
+        <div class="hp-cap">One workflow, running itself</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <p>TRUSTED ACROSS INDUSTRIES, FROM LEAN STARTUPS TO LARGE ENTERPRISES</p>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <span class="eyebrow">The problem</span>
+    <h2>It's quietly costing you more than you think</h2>
+    <p class="lead">When processes are tangled and tools don't talk, work slows down, mistakes creep in, and your team spends its days on busywork instead of the job that actually moves the business.</p>
+        <div class="painlist">
+      <div class="pain"><span class="pn">01</span><div><h3>No single source of truth</h3><p>Data scattered across tools, tabs, and inboxes, and no one trusts which version is right.</p></div></div>
+      <div class="pain"><span class="pn">02</span><div><h3>Hours lost to busywork</h3><p>Teams burn whole afternoons on copy-paste and manual data entry that should just happen automatically.</p></div></div>
+      <div class="pain"><span class="pn">03</span><div><h3>Slow, painful onboarding</h3><p>New hires take months to get up to speed because the process lives in one person's head.</p></div></div>
+      <div class="pain"><span class="pn">04</span><div><h3>Bottlenecks and handoffs</h3><p>Work stalls waiting on one person, one approval, or one file only they understand.</p></div></div>
+      <div class="pain"><span class="pn">05</span><div><h3>Errors and rework</h3><p>One wrong entry cascades, and cleaning it up costs more than doing it right the first time.</p></div></div>
+      <div class="pain"><span class="pn">06</span><div><h3>No real visibility</h3><p>Leaders make calls on stale or incomplete numbers because the real picture is buried.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section id="method" class="method">
+  <div class="wrap">
+    <span class="eyebrow">How we work</span>
+    <h2>We design the process first, then build it</h2>
+    <p class="lead">Automation only works if the process underneath it makes sense, so we start there. We design how the work should run, then build it in whatever form fits your business, from an automated workflow to a full app or page. It's shaped around how your team actually works, and you keep full access to your system and your data.</p>
+    <div class="mcards">
+      <div class="mcard">
+        <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 6h18M6 12h12M9 18h6"/></svg></div>
+        <h3>Simplify first</h3>
+        <p>Map how the work really happens, cut the steps that don't earn their place, and untangle it before a single thing gets built.</p>
+      </div>
+      <div class="mcard">
+        <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h6v6H4zM14 14h6v6h-6zM10 7h4M7 10v4M17 10v4"/></svg></div>
+        <h3>Design the workflow</h3>
+        <p>Shape a clear, logical process with the right handoffs and owners, so the system reflects a way of working that actually makes sense.</p>
+      </div>
+      <div class="mcard">
+        <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2zM8 13h8M8 17h5"/></svg></div>
+        <h3>Document best practices</h3>
+        <p>Write down how it should run in plain language, so the process lives in the business, not in one person's head.</p>
+      </div>
+      <div class="mcard">
+        <div class="mic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l9 5-9 5-9-5 9-5zM7 10v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5"/></svg></div>
+        <h3>Train and manage the change</h3>
+        <p>Hands-on training and a real adoption plan bring the team along, so the new way of working actually sticks.</p>
+      </div>
+    </div>
+    <p class="kicker">The build is the easy part. The lasting value is a <b>simpler process, documented best practices, and a team that owns it</b>. That's what turns a one-off project into how your business runs.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="center" style="max-width:700px">
+      <span class="eyebrow">The project</span>
+      <h2>From discovery to a workflow you own</h2>
+      <p class="lead">Every project starts by learning your business and ends with a workflow your team runs. You always know what's happening and what's next.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Discover &amp; map</h3><p>Discovery calls to learn your business, then map how the work really flows and where it breaks.</p></div>
+      <div class="step"><div class="num">2</div><h3>Design the workflow</h3><p>Shape a cleaner workflow with clear owners and handoffs.</p></div>
+      <div class="step"><div class="num">3</div><h3>Build &amp; automate</h3><p>Build your system with the automations, interfaces, and integrations that fit.</p></div>
+      <div class="step"><div class="num">4</div><h3>Add AI where it fits</h3><p>Layer in AI for the repetitive judgment work, using the best model for the job.</p></div>
+      <div class="step"><div class="num">5</div><h3>Train &amp; manage change</h3><p>Document it, train the team, and support adoption as you grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section id="build">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">What we build</span>
+      <h2>Automations, interfaces, and AI, whatever the job needs</h2>
+      <p class="lead" style="margin-bottom:20px">AI shouldn't be used just because it's AI. We bring it in only where it genuinely makes sense for the work, and build the mix of tools and models that actually fits your business rather than forcing everything through one.</p>
+      <ul class="checklist">
+        <li><b>Custom automations</b> that kill the manual, repetitive steps.</li>
+        <li><b>Interfaces and apps</b> your team actually wants to use.</li>
+        <li><b>Integrations</b> that connect the tools you already run.</li>
+        <li><b>Dashboards and reporting</b> for a live view of the business.</li>
+        <li><b>AI where it fits</b>, to triage, draft, tag, and summarise, using the best model for the job.</li>
+      </ul>
+    </div>
+    <div class="quote">
+      <p>New tools on a broken process just give you a faster mess. We simplify how the work flows, build the system underneath it, and teach your team to run it.</p>
+      <div class="who">The Seqnce Ops approach</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <div class="center" style="max-width:680px">
+      <span class="eyebrow">Packages</span>
+      <h2>Ways we can help</h2>
+      <p class="lead">Every project is scoped to your business and quoted as a clear proposal. Most clients start with strategy, then move through design, build, and rollout.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <h3>AI Strategy &amp; Roadmap</h3>
+        <p class="sub">We assess where you're ready for AI and automation, find the highest-value opportunities, and give you a clear plan.</p>
+        <ul><li>Readiness assessment</li><li>Automation roadmap</li><li>Change plan</li><li>Data &amp; compliance review</li></ul>
+      </div>
+      <div class="plan">
+        <h3>Workflow Design &amp; Build</h3>
+        <p class="sub">We design an AI-powered workflow around how you work, then build it into the right tools with access to your data.</p>
+        <ul><li>Workflow design that fits</li><li>AI-powered automations</li><li>Built into your tools</li><li>You keep your data</li></ul>
+      </div>
+      <div class="plan">
+        <h3>Implementation &amp; Support</h3>
+        <p class="sub">We roll it out, bring your team along, and document everything so the new way of working actually sticks.</p>
+        <ul><li>Rollout support</li><li>Training &amp; change management</li><li>Loom walkthrough + one-pager</li><li>Post-launch fixes</li></ul>
+      </div>
+      <div class="plan">
+        <h3>Ongoing Ops Partner</h3>
+        <p class="sub">An embedded partner that maintains and grows your system, flexing up or down as you need.</p>
+        <ul><li>Priority support</li><li>Ongoing iteration</li><li>Roadmap add-ons</li><li>Team enablement</li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px 30px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="font-weight:700;color:var(--ink);font-size:16px">Built to any level</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-weight:700;color:var(--plum-deep);font-size:15px">
+        <span>Simple workflow</span><span style="color:var(--blush)">&#8594;</span><span>Connected automation</span><span style="color:var(--blush)">&#8594;</span><span style="background:var(--plum);color:#fff;padding:5px 14px;border-radius:999px">Fully custom</span>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:34px 30px">
+      <h3 style="font-size:22px;margin-bottom:8px">Pricing is scoped to you</h3>
+      <p style="color:var(--grey);max-width:540px;margin:0 auto 20px;font-size:16px">Cost depends on the size and complexity of your operation, from a single audit to an enterprise rollout. Tell us what you're working with and we'll send pricing and a proposal.</p>
+      <a href="#book" class="btn">Get pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT FORM -->
+<section id="book">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Ready to fix how your business runs?</h2>
+      <p>Tell us a bit about how your team works today, and we'll show you what a simpler, automated way of working could do instead. No pitch, no pressure.</p>
+      <form class="contact-form" id="contactForm">
+        <div class="cf-row">
+          <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          <input type="email" id="cf-email" name="email" placeholder="Email address" required>
+        </div>
+        <input type="text" id="cf-company" name="company" placeholder="Company (optional)">
+        <textarea id="cf-message" name="message" rows="4" placeholder="What does your team work on, and where does it get stuck?" required></textarea>
+        <button type="submit" class="btn">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><span class="mark">S</span> Seqnce Ops</div>
+    <div>Process design &amp; workflow automation</div>
+    <div>© 2026 Seqnce Ops</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var company = document.getElementById('cf-company').value;
+    var message = document.getElementById('cf-message').value;
+    var subject = 'Seqnce Ops enquiry from ' + name;
+    var body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Company: ' + company + '\n\n' + message;
+    window.location.href = 'mailto:info@seqnceops.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(navToggle){
+    navToggle.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ navLinks.classList.remove('open'); }); });
+  }
+</script>
+
+</body>
+</html>
