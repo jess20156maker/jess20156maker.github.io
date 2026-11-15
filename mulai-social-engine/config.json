@@ -1,0 +1,37 @@
+{
+  "brand": "Mulai Villa",
+  "platform": "instagram",
+  "timezone_offset": "+08:00",
+  "timezone_note": "WITA (Lombok). 16:30 WITA = 19:30 Sydney (AEDT) = 09:30 Amsterdam (CET).",
+  "postiz_integration_env": "POSTIZ_INSTAGRAM_ID",
+  "weekly_slots": [
+    {"day": "tue", "time": "16:30", "format": "reel",     "type": "post"},
+    {"day": "thu", "time": "16:30", "format": "carousel", "type": "post"},
+    {"day": "sat", "time": "15:00", "format": "reel",     "type": "post"},
+    {"day": "sun", "time": "16:30", "format": "photo",    "type": "post"},
+    {"day": "mon", "time": "12:00", "format": "story",    "type": "story"},
+    {"day": "wed", "time": "12:00", "format": "story",    "type": "story"},
+    {"day": "fri", "time": "12:00", "format": "story",    "type": "story"}
+  ],
+  "pillars": {
+    "villa":   {"name": "The villa & its design",       "weight": 30},
+    "place":   {"name": "Lombok, slowly",               "weight": 25},
+    "people":  {"name": "The people & the hospitality", "weight": 15},
+    "guests":  {"name": "Guest book",                   "weight": 15},
+    "booking": {"name": "Begin here (how to book)",     "weight": 10},
+    "ethos":   {"name": "Mulai: to begin",              "weight": 5}
+  },
+  "rules": {
+    "caption_max_chars": 2200,
+    "caption_target_max_chars": 600,
+    "hashtags_min": 3,
+    "hashtags_max": 5,
+    "max_emoji": 1,
+    "banned_phrases": [
+      "paradise", "hidden gem", "bucket list", "wanderlust", "book now", "don't miss out",
+      "limited time", "once in a lifetime", "luxury redefined", "unforgettable", "nestled",
+      "escape the ordinary", "link in bio!!"
+    ],
+    "unconfirmed_markers": ["‹confirm", "[TO CONFIRM]", "TODO", "XX"]
+  }
+}

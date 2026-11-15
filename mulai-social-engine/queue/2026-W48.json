@@ -1,0 +1,139 @@
+{
+  "week": "2026-W48",
+  "theme": "Launch week: an introduction. Who we are, where we are, how to stay.",
+  "posts": [
+    {
+      "id": "2026-W48-mon",
+      "date": "2026-11-23T12:00:00+08:00",
+      "type": "story",
+      "format": "story",
+      "pillar": "",
+      "series": "Mulai mornings",
+      "status": "draft",
+      "hook": "",
+      "caption": "",
+      "hashtags": [],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Story, 9:16, one still or 5s clip: first light on the pool, no people. Small text sticker: \"Mulai. To begin.\" Add a \"Follow along\" link sticker to the profile.",
+      "fact_check": ""
+    },
+    {
+      "id": "2026-W48-tue",
+      "date": "2026-11-24T16:30:00+08:00",
+      "type": "post",
+      "format": "reel",
+      "pillar": "villa",
+      "series": "Mulai mornings",
+      "status": "draft",
+      "hook": "Mulai means \"to begin\". This is how a day begins here.",
+      "caption": "Mulai means \"to begin\" in Indonesian.\n\nHere, a day begins with light on the water, coffee already made, and nowhere you need to be.\n\nA private villa in Lombok, yours alone for as long as you stay. We are glad you found us.\n\nSave this for the trip you keep meaning to take.",
+      "hashtags": [
+        "lombok",
+        "lombokvilla",
+        "privatevilla",
+        "slowtravel"
+      ],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Reel, 9:16, 12-15s, 5 slow clips of 2-3s each, natural sound (water, birds), no voiceover, no trending audio. 1) dawn light across the pool 2) curtains moving in an open doorway 3) coffee being poured 4) bare feet on stone or timber 5) wide shot of the villa, still. Text on first frame only: the hook. Cover: clip 1.",
+      "fact_check": "Confirm the pool is private and the villa is whole-villa rental only."
+    },
+    {
+      "id": "2026-W48-wed",
+      "date": "2026-11-25T12:00:00+08:00",
+      "type": "story",
+      "format": "story",
+      "pillar": "",
+      "series": "The people",
+      "status": "draft",
+      "hook": "",
+      "caption": "",
+      "hashtags": [],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Story, 9:16: a candid of whoever sets up breakfast or opens the villa in the morning (with their permission). Text: their first name and one line, e.g. \"Meet ___, who knows how you take your coffee by day two.\" Poll sticker: \"Coffee or tea first?\"",
+      "fact_check": ""
+    },
+    {
+      "id": "2026-W48-thu",
+      "date": "2026-11-26T16:30:00+08:00",
+      "type": "post",
+      "format": "carousel",
+      "pillar": "place",
+      "series": "Lombok, slowly",
+      "status": "draft",
+      "hook": "Lombok, slowly: a first day with nothing booked.",
+      "caption": "Most people arrive in Lombok with a list. We suggest leaving it in your bag for the first day.\n\nSwipe for how we would spend it: a slow breakfast, one beach, one long lunch, and home in time for the light to turn.\n\nOur team plans days like this for every guest. Tell us what you like and we will shape it around you.\n\nSend this to whoever you would bring.",
+      "hashtags": [
+        "lombok",
+        "lombokisland",
+        "visitlombok",
+        "slowtravel",
+        "lomboktrip"
+      ],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Carousel, 4:5, 6 slides. 1) cover: wide Lombok coast photo with title text \"Lombok, slowly. A first day.\" 2) breakfast at the villa 3) a quiet beach near the villa, morning 4) a local warung or lunch spot 5) late afternoon back at the pool 6) text slide: \"Staying with us? We will plan it for you. Message us to begin.\" Photos only on slides 2-5, one short caption line each in small type.",
+      "fact_check": "Name the actual beach and lunch spot near the villa, with real travel times. Confirm the team offers day planning."
+    },
+    {
+      "id": "2026-W48-fri",
+      "date": "2026-11-27T12:00:00+08:00",
+      "type": "story",
+      "format": "story",
+      "pillar": "",
+      "series": "Guest book",
+      "status": "draft",
+      "hook": "",
+      "caption": "",
+      "hashtags": [],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Story, 9:16: a detail guests always photograph (the bath, the daybed, the view from a bedroom). Question sticker: \"What would you ask before booking a villa in Lombok?\" Answers feed next week's posts.",
+      "fact_check": ""
+    },
+    {
+      "id": "2026-W48-sat",
+      "date": "2026-11-28T15:00:00+08:00",
+      "type": "post",
+      "format": "reel",
+      "pillar": "booking",
+      "series": "Begin here",
+      "status": "draft",
+      "hook": "How to stay at Mulai Villa, in three steps.",
+      "caption": "Staying with us is simple.\n\nOne. Message us on WhatsApp or through the link in our profile with your dates.\nTwo. We reply personally, usually the same day, with availability and the rate.\nThree. We look after the rest: airport transfer, breakfast, and anything you would like arranged.\n\nBooking direct means you are talking to the people who will welcome you. It is also our best rate.\n\nDates for the months ahead are open now.",
+      "hashtags": [
+        "lombokvilla",
+        "lombok",
+        "privatevilla",
+        "villalombok"
+      ],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Reel, 9:16, 10-12s, 3 clips with a numbered text overlay on each: \"1. Send us your dates\" (phone on a table by the pool), \"2. We reply personally\" (a team member smiling, candid), \"3. Arrive. We do the rest\" (gate or door opening onto the villa). Natural sound. End frame: \"Message us to begin.\"",
+      "fact_check": "Confirm: WhatsApp number is in the profile link, same-day reply is realistic, airport transfer and breakfast are included, and direct really is the lowest rate."
+    },
+    {
+      "id": "2026-W48-sun",
+      "date": "2026-11-29T16:30:00+08:00",
+      "type": "post",
+      "format": "photo",
+      "pillar": "villa",
+      "series": "The detail",
+      "status": "draft",
+      "hook": "The detail: made by hand, a few kilometres from here.",
+      "caption": "Look closely and you start to see the hands behind this house.\n\nWe chose pieces made in Lombok wherever we could, by people whose families have done this work for generations. It is part of why the villa feels like it belongs where it stands.\n\nNext time you are here, ask us about this one. There is a story.",
+      "hashtags": [
+        "lombok",
+        "villadesign",
+        "tropicaldesign",
+        "sasak"
+      ],
+      "media": [],
+      "alt_text": [],
+      "shot_brief": "Single photo, 4:5: a close, quiet shot of one handmade object or surface in the villa (woven textile, carved timber, ceramic, rattan) in soft side light. No props, no text overlay.",
+      "fact_check": "Use a real object and say truthfully who made it and where. If nothing in the villa is locally made, rewrite this post around a different true detail."
+    }
+  ]
+}
